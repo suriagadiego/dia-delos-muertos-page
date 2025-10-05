@@ -687,8 +687,8 @@ footer p {
 .top-left-flower {
     position: absolute;
     top: 40%;
-    left: 36%;
-    width: 135px;
+    left: calc(50% - 14vw);
+    width: 11vw;
     height: auto;
     opacity: 0.7;
     animation: float 6s ease-in-out infinite;
@@ -697,8 +697,8 @@ footer p {
 .top-right-flower {
     position: absolute;
     top: 40%;
-    right: 36%;
-    width: 135px;
+    right: calc(50% - 14vw);
+    width: 11vw;
     height: auto;
     opacity: 0.7;
     animation: float 6s ease-in-out infinite;
@@ -708,8 +708,8 @@ footer p {
 .left-flower {
     position: absolute;
     top: 12%;
-    left: 31%;
-    width: 175px;
+    left: calc(50% - 18vw);
+    width: 12vw;
     height: auto;
     opacity: 0.6;
     animation: float 8s ease-in-out infinite reverse;
@@ -718,8 +718,8 @@ footer p {
 .right-flower {
     position: absolute;
     top: 12%;
-    right: 30%;
-    width: 175px;
+    right: calc(50% - 19vw);
+    width: 12vw;
     height: auto;
     opacity: 0.6;
     animation: float 8s ease-in-out infinite;
@@ -729,8 +729,8 @@ footer p {
 .bottom-left-flower {
     position: absolute;
     top: 12%;
-    left: 17%;
-    width: 250px;
+    left: calc(50% - 29vw);
+    width: 15vw;
     height: auto;
     opacity: 0.5;
     animation: float 7s ease-in-out infinite;
@@ -739,8 +739,8 @@ footer p {
 .bottom-right-flower {
     position: absolute;
     top: 12%;
-    right: 16%;
-    width: 250px;
+    right: calc(50% - 30vw);
+    width: 15vw;
     height: auto;
     opacity: 0.5;
     animation: float 7s ease-in-out infinite;
@@ -750,7 +750,7 @@ footer p {
     position: absolute;
     top: 31%;
     left: 50%;
-    width: 300px;
+    width: 20vw;
     height: auto;
     opacity: 0.8;
     z-index: 1;
@@ -787,10 +787,31 @@ footer p {
 
 /* Responsive SVG adjustments */
 @media (max-width: 768px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 0;
+    }
+    
+    .hero-decoration {
+        position: relative;
+        width: 100vw;
+        height: 300px;
+        flex-shrink: 0;
+        margin-bottom: 30px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .hero-content {
+        padding: 0 20px;
+    }
+    
     .top-left-flower,
     .top-right-flower {
         width: 100px;
-        top: 35%;
+        top: 85%;
     }
     
     .top-left-flower {
@@ -804,7 +825,7 @@ footer p {
     .left-flower,
     .right-flower {
         width: 140px;
-        top: 18%;
+        top: 30%;
     }
     
     .left-flower {
@@ -818,20 +839,66 @@ footer p {
     .bottom-left-flower,
     .bottom-right-flower {
         width: 140px;
-        top: 16%;
+        top: 30%;
     }
     
     .bottom-left-flower {
-        left: -20%;
+        left: -25%;
     }
     
     .bottom-right-flower {
-        right: -20%;
+        right: -25%;
     }
     
     .center-skull {
         width: 200px;
-        top: 31%;
+        top: 66%;
         left: 50%;
+    }
+    
+    .hero-content {
+        position: relative;
+        margin-top: auto;
+        padding-bottom: 40px;
+    }
+}
+
+/* Adjustments for taller phones (like iPhone 14 Pro Max) */
+@media (max-width: 768px) and (min-height: 800px) {
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        padding: 0 20px 40px 20px;
+    }
+    
+    .hero-decoration {
+        height: 280px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-content {
+        margin-top: 0;
+    }
+}
+
+/* Extra compact for very tall screens */
+@media (max-width: 768px) and (min-height: 900px) {
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        padding: 0 20px 60px 20px;
+    }
+    
+    .hero-decoration {
+        height: 300px;
+        margin-bottom: 40px;
     }
 }
